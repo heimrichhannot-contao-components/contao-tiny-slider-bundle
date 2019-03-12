@@ -1,4 +1,6 @@
-import {tns} from 'tiny-slider';
+import {tns} from 'tiny-slider/src/tiny-slider';
+
+window.tns = !window.tns ? tns : window.tns;
 
 class TinySliderBundle {
     constructor(selector, forceInit) {
@@ -9,8 +11,7 @@ class TinySliderBundle {
 
     static init(element, forceInit) {
         let container = element.querySelector('.tiny-slider-container'),
-            config = JSON.parse(container.getAttribute('data-tiny-slider-config')),
-            tns = typeof tns !== 'undefined' ? tns : window.tns;
+            config = JSON.parse(container.getAttribute('data-tiny-slider-config'));
 
         if (config.skipInit && (typeof forceInit === 'undefined' || !forceInit))
         {
@@ -30,7 +31,7 @@ class TinySliderBundle {
             }
         };
 
-        let slider = tns(config);
+        let slider = window.tns(config);
 
         TinySliderBundle.sliders.push(slider);
     }
