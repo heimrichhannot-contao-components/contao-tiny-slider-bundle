@@ -9,7 +9,8 @@ class TinySliderBundle {
 
     static init(element, forceInit) {
         let container = element.querySelector('.tiny-slider-container'),
-            config = JSON.parse(container.getAttribute('data-tiny-slider-config'));
+            config = JSON.parse(container.getAttribute('data-tiny-slider-config')),
+            tns = typeof tns !== 'undefined' ? tns : window.tns;
 
         if (config.skipInit && (typeof forceInit === 'undefined' || !forceInit))
         {
