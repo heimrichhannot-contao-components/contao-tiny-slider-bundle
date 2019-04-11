@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.6] - 2019-04-11
+
+### Fixed
+- update `tiny-slider` dependency from 2.8.8 to 2.9.2 as [#361](https://github.com/ganlanyuan/tiny-slider/issues/361) was fixed
+
 ## [1.0.5] - 2019-03-12
 
 ### Fixed

@@ -31,7 +31,13 @@ class TinySliderBundle {
             }
         };
 
-        let slider = window.tns(config);
+        let slider = window.tns(config),
+            sliderControls = element.querySelector('.tns-controls');
+
+
+        if(sliderControls){
+            sliderControls.removeAttribute('tabindex'); // accessibility fix, control div should not have an tabindex=0
+        }
 
         TinySliderBundle.sliders.push(slider);
     }

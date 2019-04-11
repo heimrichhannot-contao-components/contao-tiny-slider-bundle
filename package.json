@@ -1,12 +1,12 @@
 {
   "name": "@hundh/contao-tiny-slider-bundle",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This package contains the frontend assets of the composer bundle heimrichhannot/contao-tiny-slider-bundle.",
   "main": "js/contao-tiny-slider-bundle.js",
   "repository": "git@github.com:heimrichhannot-contao-components/contao-tiny-slider-bundle.git",
   "author": "Heimrich & Hannot <digitales@heimrich-hannot.de>",
   "license": "MIT",
   "dependencies": {
-    "tiny-slider": "2.8.8"
+    "tiny-slider": "^2.9.2"
   }
 }
