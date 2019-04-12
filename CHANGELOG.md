@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2019-04-12
+
+### Fixed
+- `import` path for tiny-slider `2.9.2`
+
+### Added
+- accessibility support for sliders without focusable elments inside (tab/shift-tab support added, triggers slider goTo)
+- accessibility support for sliders with focusable elments inside (tab/shift-tab support added, triggers slider goTo)
+
 ## [1.0.6] - 2019-04-11
 
 ### Fixed
