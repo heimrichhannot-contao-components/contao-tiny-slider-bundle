@@ -36,6 +36,12 @@ class TinySliderInstance {
 
         this.config.onInit = function(e) {
             this.element.classList.add('tiny-slider-initialized');
+            this.sliderControls = this.element.querySelector('.tns-controls');
+
+            // accessibility fix, control div should not have an tabindex if nested elements can have focus
+            if (this.sliderControls && focusElements.length > 0) {
+                this.sliderControls.removeAttribute('tabindex');
+            }
 
             if (onInit) {
                 let onInitFunction = new Function(onInit + '()');
@@ -44,12 +50,6 @@ class TinySliderInstance {
         }.bind(this);
 
         this.slider = window.tns(this.config);
-        this.sliderControls = this.element.querySelector('.tns-controls');
-
-        // accessibility fix, control div should not have an tabindex if nested elements can have focus
-        if (this.sliderControls && focusElements.length > 0) {
-            this.sliderControls.removeAttribute('tabindex');
-        }
 
         this.container.addEventListener('keydown', this.keyListener.bind(this), true);
 
@@ -72,7 +72,7 @@ class TinySliderInstance {
                     info.index > 0 && e.preventDefault();
                 } else {
                     // keep focus on slider next tab
-                    (info.index + 1 < info.slideCount) &&  e.preventDefault();
+                    (info.index + 1 < info.slideCount) && e.preventDefault();
                 }
 
                 return;
